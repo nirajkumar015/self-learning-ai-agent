@@ -12,9 +12,9 @@ st.set_page_config(
 st.title("🤖 Self-Learning AI Agent")
 
 st.caption(
-    "A self-learning AI agent built with Python, Ollama and Qwen3"
+    "A self-learning AI agent built with Python, "
+    "using Ollama/Qwen3 locally and Gemini for cloud deployment"
 )
-
 
 if "agent" not in st.session_state:
     st.session_state.agent = Agent("MyAgent")
