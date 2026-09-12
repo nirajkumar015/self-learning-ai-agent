@@ -239,5 +239,41 @@
         "result": "5",
         "success": true,
         "lesson": "Count on from the first number"
+    },
+    {
+        "task": "Calculate 2500 + 3500",
+        "result": "Tool Error: Unknown planned tool 'None'.",
+        "success": false,
+        "lesson": "Add thousands and hundreds digits separately."
+    },
+    {
+        "task": "Calculate 2500 + 3500",
+        "result": "Tool Error: Unknown planned tool 'None'.",
+        "success": false,
+        "lesson": "Define a tool for arithmetic before calculations"
+    },
+    {
+        "task": "Calculate 2500 + 3500",
+        "result": "6000",
+        "success": true,
+        "lesson": "Add numbers by place value."
+    },
+    {
+        "task": "Calculate 2500 + 3500",
+        "result": "6000",
+        "success": true,
+        "lesson": "Use the successful procedure from this experience when handling similar tasks."
+    },
+    {
+        "task": "Write the result to \"final.txt\"",
+        "result": "File 'final.txt' written successfully.",
+        "success": true,
+        "lesson": "Validate inputs to prevent errors"
+    },
+    {
+        "task": "Read \"final.txt\"",
+        "result": "6000",
+        "success": true,
+        "lesson": "Directly read single number files."
     }
 ]
