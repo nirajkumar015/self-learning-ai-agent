@@ -1,158 +1,50 @@
-\# Self-Learning AI Agent 🤖
+# 🤖 Self-Learning AI Agent
 
+> A self-learning AI agent built from scratch in Python that can understand goals, create plans, select tools, execute multi-step tasks, evaluate results, learn from experiences, and store reusable lessons in persistent memory.
 
+🌐 **Live Demo:**  
+https://self-learning-ai-agent.streamlit.app/
 
-A self-learning AI agent built from scratch in Python using a local LLM through Ollama.
+🐙 **GitHub Repository:**  
+https://github.com/nirajkumar015/self-learning-ai-agent
 
+---
 
+## 🚀 Project Overview
 
-The agent can understand goals, create plans, select tools, execute actions, evaluate results, learn lessons from experiences, and store those lessons in persistent memory.
+This project is a goal-driven AI agent designed to demonstrate how autonomous AI systems can be built from scratch.
 
+Unlike a simple chatbot that only generates responses, this agent can:
 
+1. Understand a user's goal
+2. Break the goal into logical steps
+3. Decide which tool should be used
+4. Execute the planned action
+5. Observe the result
+6. Evaluate whether the action succeeded
+7. Learn a reusable lesson from the experience
+8. Store the experience in memory
+9. Use relevant previous experiences in future decisions
 
-\## 🧠 Architecture
-
-
-
-User Goal
-
-&#x20;  ↓
-
-Agent Controller
-
-&#x20;  ↓
-
-Planner
-
-&#x20;  ↓
-
-Brain / LLM
-
-&#x20;  ↓
-
-Tool Selection
-
-&#x20;  ↓
-
-Action
-
-&#x20;  ↓
-
-Observation
-
-&#x20;  ↓
-
-Evaluation
-
-&#x20;  ↓
-
-Learner
-
-&#x20;  ↓
-
-Persistent Memory
-
-&#x20;  ↓
-
-Future Decisions
-
-
-
-\## ✨ Features
-
-
-
-\- Goal-based task execution
-
-\- AI-powered planning
-
-\- Local LLM using Ollama
-
-\- AI-driven tool selection
-
-\- Calculator tool
-
-\- Python execution tool
-
-\- File read/write tools
-
-\- Persistent JSON memory
-
-\- Relevant memory retrieval
-
-\- Experience evaluation
-
-\- Automatic lesson extraction
-
-\- Learning from previous experiences
-
-\- Step retry and error recovery
-
-\- Multi-step autonomous task execution
-
-
-
-\## 🛠️ Tech Stack
-
-
-
-\- Python 3.11
-
-\- Ollama
-
-\- Qwen3 4B
-
-\- JSON
-
-\- PowerShell / Windows
-
-\- VS Code
-
-
-
-\## 📁 Project Structure
-
-
+The core loop is:
 
 ```text
-
-self\_learning\_agent/
-
-│
-
-├── agent.py
-
-├── brain.py
-
-├── planner.py
-
-├── learner.py
-
-├── memory.py
-
-├── final\_response.py
-
-├── main.py
-
-├── experiences.json
-
-├── requirements.txt
-
-├── .gitignore
-
-│
-
-├── tools/
-
-│   ├── \_\_init\_\_.py
-
-│   ├── calculator.py
-
-│   ├── python\_tool.py
-
-│   └── file\_tool.py
-
-│
-
-└── venv/
-
+User Goal
+    ↓
+Planner
+    ↓
+Brain / LLM
+    ↓
+Tool Selection
+    ↓
+Action
+    ↓
+Observation
+    ↓
+Evaluation
+    ↓
+Learner
+    ↓
+Memory
+    ↓
+Future Decisions
