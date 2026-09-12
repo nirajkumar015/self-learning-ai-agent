@@ -1,4 +1,4 @@
-from ollama import chat
+from llm import chat
 
 
 class FinalResponse:

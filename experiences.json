@@ -275,5 +275,15 @@
         "result": "6000",
         "success": true,
         "lesson": "Directly read single number files."
+    },
+    {
+        "task": "Calculate 2500 + 3500",
+        "result": "6000",
+        "success": true
+    },
+    {
+        "task": "Output the final calculated result to the user",
+        "result": "6000",
+        "success": true
     }
 ]

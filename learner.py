@@ -1,15 +1,15 @@
-from ollama import chat
+from llm import chat
 
 
 class Learner:
-
     def __init__(self):
-        self.model = "qwen3:4b"
+        self.model = "gemini-3.8-flash"
 
     def learn(self, task, result, success):
-
         prompt = f"""
-You are a learning module.
+You are the learning system of an AI agent.
+
+The agent attempted this task:
 
 TASK:
 {task}
@@ -20,47 +20,41 @@ RESULT:
 SUCCESS:
 {success}
 
-Write ONE short reusable lesson.
+Analyze this experience.
 
-The lesson must:
-- be one sentence
-- be practical
-- be less than 25 words
-- describe a method or strategy
-- not repeat the answer
-- not explain the reasoning
-- not use Markdown
-- not use headings
-- not use bullet points
-- not use examples
+Extract one useful lesson that could help the agent
+perform similar tasks better in the future.
 
-If there is no useful lesson, write exactly:
+Keep the lesson short and practical.
+
+If there is no useful reusable lesson, return exactly:
 
 NO_USEFUL_LESSON
 
-Return ONLY the lesson sentence.
+Return ONLY the lesson.
 """
 
-        response = chat(
-            model=self.model,
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ]
-        )
-
-        lesson = response.message.content.strip()
-
-        # Basic cleanup if the model still adds formatting
-        lesson = lesson.replace("**", "")
-        lesson = lesson.replace("###", "")
-        
-        if len(lesson.split()) > 25:
-            lesson = (
-                "Use the successful procedure from this experience "
-                "when handling similar tasks."
+        try:
+            response = chat(
+                model=self.model,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ]
             )
 
-        return lesson
+            lesson = response.message.content.strip()
+
+            if not lesson:
+                return "NO_USEFUL_LESSON"
+
+            return lesson
+
+        except Exception as error:
+            print("\n⚠️ Learning system temporarily unavailable.")
+            print(f"Learning error: {error}")
+            print("➡️ Saving the experience without a lesson.")
+
+            return "NO_USEFUL_LESSON"
